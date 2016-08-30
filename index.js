@@ -80,11 +80,17 @@ const isFunc = require( 'is-function' ),
 
     }
 
-module.exports = ( objToExtendWith ) => {
+module.exports = ( objToExtendWith, options ) => {
 
     if ( !isCorrectType( objToExtendWith ) ) {
 
         return false;
+
+    }
+
+    if ( options ) {
+
+        module.exports.settings = Object.assign( {}, module.exports.settings, options );
 
     }
 
