@@ -1,4 +1,4 @@
-# objextender [![Build Status](https://travis-ci.org/nperez0111/objextender.svg?branch=master)](https://travis-ci.org/nperez0111/objextender)
+# objextender [![Build Status](https://travis-ci.org/nperez0111/objExtender.svg?branch=master)](https://travis-ci.org/nperez0111/objextender)
 
 > Extends the Object Prototype safely using ES6 Symbols
 
