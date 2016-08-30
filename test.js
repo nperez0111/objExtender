@@ -36,13 +36,14 @@ test( 'Working get Helper Method', t => {
 } );
 
 test( 'Working disabled get Helper Method', t => {
-    fn.settings.getHelperMethod = false;
+
     let please = fn( {
             grabX: function ( get ) {
                 return get === undefined;
             }
         } ),
         x = {};
+    fn.settings.getHelperMethod = false;
     t.true( x[ please.grabX ]() );
     fn.settings.getHelperMethod = true;
     t.false( x[ please.grabX ]() );

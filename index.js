@@ -34,7 +34,7 @@ const isFunc = require( 'is-function' ),
 
             }
 
-            return [ key, Symbol( key ) ];
+            return [ key, Symbol.for( key ) ];
 
         } )
 
@@ -102,10 +102,14 @@ module.exports = ( objToExtendWith, options ) => {
         module.exports.settings.toExtend.prototype[ symbols[ key ] ] = vals[ key ]
 
     } )
-
+    reset();
     return symbols;
 }
-module.exports.settings = {
-    getHelperMethod: true,
-    toExtend: Object
-};
+
+function reset() {
+    module.exports.settings = {
+        getHelperMethod: true,
+        toExtend: Object
+    };
+}
+reset();

@@ -28,8 +28,5 @@
     },
     "devDependencies": {
         "ava": "^0.15.2"
-    },
-    "xo": {
-        "esnext": true
     }
 }
