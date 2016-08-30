@@ -47,3 +47,19 @@ test( 'Working disabled get Helper Method', t => {
     fn.settings.getHelperMethod = true;
     t.false( x[ please.grabX ]() );
 } );
+
+test( 'Working extension of prototypes of other types of objects', t => {
+
+
+    let x = function () {
+        this.x = true
+    };
+    fn.settings.toExtend = x;
+    let please = fn( {
+        grabX: function ( get ) {
+            return get( 'x' );
+        }
+    } )
+
+    t.true( ( new x() )[ please.grabX ]() );
+} );

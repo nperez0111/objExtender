@@ -93,12 +93,13 @@ module.exports = ( objToExtendWith ) => {
 
     Object.keys( vals ).forEach( function ( key ) {
 
-        Object.prototype[ symbols[ key ] ] = vals[ key ]
+        module.exports.settings.toExtend.prototype[ symbols[ key ] ] = vals[ key ]
 
     } )
 
     return symbols;
 }
 module.exports.settings = {
-    getHelperMethod: true
+    getHelperMethod: true,
+    toExtend: Object
 };
