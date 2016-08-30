@@ -49,7 +49,8 @@ const isFunc = require( 'is-function' ),
 
             return [ key, function () {
 
-                let args = Array.from( arguments ).unshift( this )
+                let args = Array.from( arguments )
+                args.unshift( this )
 
                 return val.apply( this, args )
 
