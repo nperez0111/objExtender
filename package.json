@@ -21,7 +21,11 @@
   "keywords": [
     ""
   ],
-  "dependencies": {},
+  "dependencies": {
+    "is-function": "^1.0.1",
+    "is-object": "^1.0.1",
+    "map-obj": "^1.0.1"
+  },
   "devDependencies": {
     "ava": "^0.15.2",
     "xo": "^0.16.0"
