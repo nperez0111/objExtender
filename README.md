@@ -72,6 +72,31 @@ let y = {
 y[ please.grabX ]()
 //=> 34
 ```
+##### toExtend
+
+Type: `object(but really a class)`<br>
+Default: `Object (the class)`
+
+This allows you to choose what object you would like to be extending the prototype of safely. Like so:
+
+```js
+let classyClass = function () {
+        this.x = 'magic'
+    };
+
+let please = fn( {
+        grabX: function ( get ) {
+            return get( 'x' );
+        }
+    }, {
+        toExtend: classyClass
+    } )
+    
+let objectOfClass = new classyClass();
+    
+objectOfClass[ please.grabX ]()
+//=> 'magic'
+```
 
 
 
