@@ -1,3 +1,4 @@
+"use strict";
 const isFunc = require( 'is-function' ),
     isObj = require( 'is-object' ),
     mapObj = require( 'map-obj' ),
