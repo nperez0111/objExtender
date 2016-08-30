@@ -1,4 +1,4 @@
-# objextender [![Build Status](https://travis-ci.org/nperez0111/objExtender.svg?branch=master)](https://travis-ci.org/nperez0111/objextender)
+# objExtender [![Build Status](https://travis-ci.org/nperez0111/objExtender.svg?branch=master)](https://travis-ci.org/nperez0111/objextender)
 
 > Extends the Object Prototype safely using ES6 Symbols
 
@@ -13,10 +13,25 @@ $ npm install --save objextender
 ## Usage
 
 ```js
-const objextender = require('objextender');
+const extend = require( 'objextender' );
 
-objextender('unicorns');
-//=> 'unicorns & rainbows'
+let get = extend( {
+
+    keys: function () {
+
+        return Object.keys( this )
+
+    }
+
+} )
+
+let x = {
+    a: 1,
+    b: 2
+}
+
+x[ get.keys ]()
+//=> [ 'a', 'b' ]
 ```
 
 
@@ -26,18 +41,38 @@ objextender('unicorns');
 
 #### input
 
-Type: `string`
+Type: `object`
 
-Lorem ipsum.
+`input` must be in a format where the values of any given key is a `function`
 
 #### options
 
-##### foo
+##### getHelperMethod
 
 Type: `boolean`<br>
-Default: `false`
+Default: `true`
 
-Lorem ipsum.
+This allows you to choose whether you would like the provided get helper method which allows you to do this:
+
+```js
+let please = extend( {
+
+    grabX: function ( get ) {
+
+        return get( 'x' );
+
+    }
+
+} )
+
+let y = {
+    x: 34
+}
+
+y[ please.grabX ]()
+//=> 34
+```
+
 
 
 ## License
