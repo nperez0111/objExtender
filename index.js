@@ -49,8 +49,25 @@ const isFunc = require( 'is-function' ),
 
             return [ key, function () {
 
-                let args = Array.from( arguments )
-                args.unshift( this )
+                let that = this,
+                    args = Array.from( arguments )
+
+                args.unshift( function ( query ) {
+
+                    if ( that.hasOwnProperty( query ) ) {
+
+                        return that[ query ]
+
+                    }
+                    if ( query === undefined ) {
+
+                        return that
+
+                    }
+
+                    return undefined
+
+                } )
 
                 return val.apply( this, args )
 
