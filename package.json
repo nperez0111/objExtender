@@ -1,36 +1,35 @@
 {
-  "name": "objextender",
-  "version": "0.0.0",
-  "description": "Extends the Object Prototype safely using ES6 Symbols",
-  "license": "MIT",
-  "repository": "nperez0111/objextender",
-  "author": {
-    "name": "Nick The Sick",
-    "email": "nperez0111@gmail.com",
-    "url": "nickthesick.com"
-  },
-  "engines": {
-    "node": ">=4"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    ""
-  ],
-  "dependencies": {
-    "is-function": "^1.0.1",
-    "is-object": "^1.0.1",
-    "map-obj": "^1.0.1"
-  },
-  "devDependencies": {
-    "ava": "^0.15.2",
-    "xo": "^0.16.0"
-  },
-  "xo": {
-    "esnext": true
-  }
+    "name": "objextender",
+    "version": "0.0.0",
+    "description": "Extends the Object Prototype safely using ES6 Symbols",
+    "license": "MIT",
+    "repository": "nperez0111/objextender",
+    "author": {
+        "name": "Nick The Sick",
+        "email": "nperez0111@gmail.com",
+        "url": "nickthesick.com"
+    },
+    "engines": {
+        "node": ">=4"
+    },
+    "scripts": {
+        "test": "ava"
+    },
+    "files": [
+        "index.js"
+    ],
+    "keywords": [
+        ""
+    ],
+    "dependencies": {
+        "is-function": "^1.0.1",
+        "is-object": "^1.0.1",
+        "map-obj": "^1.0.1"
+    },
+    "devDependencies": {
+        "ava": "^0.15.2"
+    },
+    "xo": {
+        "esnext": true
+    }
 }
