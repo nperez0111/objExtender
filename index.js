@@ -41,6 +41,7 @@ const isFunc = require( 'is-function' ),
     funcBinder = ( obj, symbols, toBeBound ) => {
 
         return mapObj( obj, ( key, val ) => {
+
             if ( isObj( val ) ) {
 
                 return [ key, funcBinder( val, symbols[ key ], toBeBound ) ]
@@ -51,23 +52,24 @@ const isFunc = require( 'is-function' ),
 
                 let that = this,
                     args = Array.from( arguments )
+                if ( module.exports.settings.getHelperMethod ) {
+                    args.unshift( function ( query ) {
 
-                args.unshift( function ( query ) {
+                        if ( that.hasOwnProperty( query ) ) {
 
-                    if ( that.hasOwnProperty( query ) ) {
+                            return that[ query ]
 
-                        return that[ query ]
+                        }
+                        if ( query === undefined ) {
 
-                    }
-                    if ( query === undefined ) {
+                            return that
 
-                        return that
+                        }
 
-                    }
+                        return undefined
 
-                    return undefined
-
-                } )
+                    } )
+                }
 
                 return val.apply( this, args )
 
@@ -96,3 +98,6 @@ module.exports = ( objToExtendWith ) => {
 
     return symbols;
 }
+module.exports.settings = {
+    getHelperMethod: true
+};
