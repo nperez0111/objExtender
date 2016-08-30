@@ -1,6 +1,6 @@
 {
     "name": "objextender",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Extends the Object Class(or any object) Prototype safely using ES6 Symbols",
     "license": "MIT",
     "repository": "nperez0111/objextender",
