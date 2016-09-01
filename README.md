@@ -2,7 +2,6 @@
 
 > Extends the Object Prototype safely using ES6 Symbols
 
-
 ## Install
 
 ```
