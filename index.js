@@ -2,27 +2,9 @@
 const isFunc = require( 'is-function' ),
     isObj = require( 'is-object' ),
     mapObj = require( 'map-obj' ),
+    isInCorrectFormat = require( 'is-in-correct-format' ),
     isCorrectType = obj => {
-        return Object.keys( obj ).map( key => {
-
-            return obj[ key ]
-
-        } ).map( val => {
-
-            if ( isObj( val ) ) {
-
-                return isCorrectType( val )
-
-            }
-
-            return isFunc( val )
-
-        } ).every( isTrue => {
-
-            return isTrue
-
-        } );
-
+        return isInCorrectFormat( obj, {}, isInCorrectFormat.is.function )
     },
     mapToSymbols = ( obj ) => {
 

@@ -19,10 +19,13 @@
         "index.js"
     ],
     "keywords": [
-        "object", "prototype", "extend"
+        "object",
+        "prototype",
+        "extend"
     ],
     "dependencies": {
         "is-function": "^1.0.1",
+        "is-in-correct-format": "^0.0.3",
         "is-object": "^1.0.1",
         "map-obj": "^1.0.1"
     },
