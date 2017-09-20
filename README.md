@@ -2,6 +2,8 @@
 
 > Extends the Object Prototype safely using ES6 Symbols
 
+This small utility library allows you to extend the Object prototype safely to put methods that all objects will be guarenteed to have (since it is an extension of the Object Prototype which all Objects inherit from).
+
 ## Install
 
 ```
